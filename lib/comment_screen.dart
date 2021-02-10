@@ -27,6 +27,12 @@ class _CommentScreenState extends State<CommentScreen> {
   final TextEditingController _commentController = TextEditingController();
 
   _CommentScreenState({this.postId, this.postOwner, this.postMediaUrl});
+  
+  @override
+  void dispose(){
+    _commentController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
